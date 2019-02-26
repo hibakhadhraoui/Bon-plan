@@ -1,0 +1,57 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Category{% endblock %}
+
+{% block stylesheets %}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table {
+  width: 90%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  color: black;
+}
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="page-header mt-0 shadow p-3">
+        <ol class="breadcrumb mb-sm-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="{{ path('category_index') }}">Show All</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Show</li>
+        </ol>							
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ category.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ category.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
